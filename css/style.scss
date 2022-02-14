@@ -1,0 +1,24 @@
+@import "./components/header";
+@import "./components/banner";
+@import "./components/usage";
+@import "./components/workflow";
+@import "./components/tools";
+@import "./components/roadmap";
+@import "./components/automation";
+@import "./components/security";
+@import "./components/app";
+@import "./components/plans";
+@import "./components/features";
+@import "./components/footer";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (min-width: 1440px) {
+    body{
+        width: 1280px;
+        margin: 0 auto;
+    }
+}

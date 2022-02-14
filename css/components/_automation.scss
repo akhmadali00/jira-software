@@ -1,0 +1,80 @@
+$text-dark-blue: #091e42;
+$text-color: #42526e;
+$text-light-blue: #0052CC;
+$main-gray: #f0f0f0;
+$dark-gray: #ccc;
+$light-color: #FFFFFF;
+
+@mixin flexBox() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin flexCenter() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.automation{
+    height: 350px;
+    @include flexCenter();
+    background-image: url(https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:e1b033e1-4d7d-46a3-995c-2a55731e800b/automation-banner-L%20768.svg?cdnVersion=208) ,
+     url(https://wac-cdn-2.atlassian.com/image/upload/f_auto,q_auto/dam/jcr:43f0949b-f655-4d01-bc18-258b25c74912/automation-banner-R%20768.svg?cdnVersion=208);
+    background-position: left center , right center;
+    background-repeat: no-repeat , no-repeat;
+    background-size: auto 100% , auto 100%;
+    background-color: #172b4d;;
+    &__text{
+        @include flexBox();
+        flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        .title{
+            h1{
+                font-size: 32px;
+                color: $light-color;
+            }
+        }.paragraph{
+            p{
+                font-size: 14px;
+                color: $light-color;
+            }
+        }.automation__btn{
+            color: $light-color;
+            border: 1px solid $light-color;
+            background: transparent;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 600;
+            margin: 30px 0;
+            font-size: 16px;
+            cursor: pointer;
+            &:hover{
+                background: rgb(143, 143, 143);
+                transition: all .4s ease;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .automation{
+        height: 200px;
+        @include flexCenter();
+        background-image: none;
+        &__text{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            @include flexCenter();
+            flex-direction: column;
+            .title{
+                h1{
+                    font-size: 20px;
+                }
+            }.paragraph{
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

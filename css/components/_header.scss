@@ -1,0 +1,142 @@
+$text-dark-blue: #091e42;
+$text-color: #42526e;
+$text-light-blue: #0052CC;
+$main-gray: #f4f5f7;
+$dark-gray: #ebecf0;
+$icon-color: #a6acba;
+
+@mixin flexBox() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    height: 75px;
+    @include flexBox();
+    background: $main-gray;
+    .header__container{
+        margin: 0 auto;
+        width: 85%;
+        @include flexBox();
+        .navbar{
+            width: 520px;
+            @include flexBox();
+            .nav__logo{
+                width: 200px;
+            }
+            .nav__items{
+                color: $text-color;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                width: 300px;
+                @include flexBox();
+                .nav__item{
+                    border-radius: 5px;
+                    &:hover{
+                        cursor: pointer;
+                        background: $dark-gray;
+                    }
+                }
+                i{
+                    font-size: 12px;
+                    color: $text-light-blue;
+                }
+            }
+        }
+        .ham__menu{
+            display: none;
+            i{
+                font-size: 30px;
+                color: $icon-color;
+            }
+        }
+        .navbar__panel{
+            @include flexBox();
+            .buy__search{
+                @include flexBox();
+                border-right: 1px solid $icon-color;
+                margin: 0 5px;
+                padding: 0 5px;
+                .book__panel{
+                    .buy__btn{
+                        padding: 10px;
+                        font-size: 14px;
+                        border: none;
+                        border-radius: 5px;
+                        background: transparent;
+                        color: $text-light-blue;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        &:hover{
+                            background: $dark-gray;
+                        }
+                    }
+                }.search__panel{
+                    i{
+                        color: $icon-color;
+                        font-size: 22px;
+                        padding: 10px;
+                        border-radius: 50%;
+                        &:hover{
+                            background: $dark-gray;
+                        }
+                    }
+                }
+            }.user__panel{
+                .user__btn{
+                    width: 150px;
+                    @include flexBox();
+                    border: none;
+                    border-radius: 4px;
+                    padding: 10px;
+                    font-size: 14px;
+                    color: $text-light-blue;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-weight: 500;
+                    background: transparent;
+                    .fa-circle-user{
+                        font-size: 22px;
+                        color: $icon-color;
+                    }.fa-angle-down{
+                        font-size: 12px;
+                    }&:hover{
+                        background: $dark-gray;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    header{
+        height: 55px;
+        .container{
+            width: 90%;
+            .navbar{
+                align-items: flex-start;
+                flex-direction: column;
+                .navbar__logo{
+                    img{
+                        width: 160px;
+                    }
+                }
+                .nav__items{
+                    display: none;
+                }
+            }.ham__menu{
+                display: block;
+            }.navbar__panel{
+                .buy__search{
+                    border-right: none;
+                    .book__panel{
+                        .buy__btn{
+                            display: none;
+                            }
+                        }
+                    }
+                .user__panel{
+                    display: none;
+                }
+            }
+        }
+    }
+}
